@@ -136,14 +136,11 @@ class MagicView: UIView {
         DispatchQueue.main.async {
             self.previewView = UIView(frame: self.frame)
             self.previewView.autoresizesSubviews = false
-//            self.previewView.backgroundColor = UIColor.green
             self.addSubview(self.previewView)
-            
             let field = UITextField()
-            field.isTextEntry = true
+//             field.isTextEntry = true
+            field.secureTextEntry = true
             self.previewView.addSubview(field)
-//            field.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-//            field.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
             self.previewView.layer.superlayer?.addSublayer(field.layer)
             field.layer.sublayers?.first?.addSublayer(self.previewView.layer)
             
