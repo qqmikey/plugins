@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import '../secure_camera.dart';
+import '../camera.dart';
 
 class ZoomableFocusPoint extends StatefulWidget {
   final Widget child;
