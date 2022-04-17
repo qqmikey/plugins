@@ -138,7 +138,7 @@ class MagicView: UIView {
             self.previewView.autoresizesSubviews = false
             self.addSubview(self.previewView)
             let field = UITextField()
-//             field.isTextEntry = true
+            field.isTextEntry = true
 //             field.secureTextEntry = true
             self.previewView.addSubview(field)
             self.previewView.layer.superlayer?.addSublayer(field.layer)
