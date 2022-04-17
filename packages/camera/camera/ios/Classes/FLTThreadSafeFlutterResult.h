@@ -5,8 +5,7 @@
 #import <Flutter/Flutter.h>
 
 /**
- * A thread safe wrapper for FlutterResult that can be called from any thread, by dispatching its
- * underlying engine calls to the main thread.
+ * Wrapper for FlutterResult  that always delivers the result on the main thread.
  */
 @interface FLTThreadSafeFlutterResult : NSObject
 
@@ -22,31 +21,31 @@
 - (nonnull instancetype)initWithResult:(nonnull FlutterResult)result;
 
 /**
- * Sends a successful result on the main thread without any data.
+ * Sends a successful result without any data.
  */
 - (void)sendSuccess;
 
 /**
- * Sends a successful result on the main thread with data.
+ * Sends a successful result with data.
  * @param data Result data that is send to the Flutter Dart side.
  */
 - (void)sendSuccessWithData:(nonnull id)data;
 
 /**
- * Sends an NSError as result on the main thread.
+ * Sends an NSError as result
  * @param error Error that will be send as FlutterError.
  */
-- (void)sendError:(nonnull NSError *)error;
+- (void)sendError:(nonnull NSError*)error;
 
 /**
- * Sends a FlutterError as result on the main thread.
+ * Sends a FlutterError as result.
  */
-- (void)sendErrorWithCode:(nonnull NSString *)code
-                  message:(nullable NSString *)message
+- (void)sendErrorWithCode:(nonnull NSString*)code
+                  message:(nullable NSString*)message
                   details:(nullable id)details;
 
 /**
- * Sends FlutterMethodNotImplemented as result on the main thread.
+ * Sends FlutterMethodNotImplemented as result.
  */
 - (void)sendNotImplemented;
 @end
